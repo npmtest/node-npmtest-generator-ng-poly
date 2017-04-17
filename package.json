@@ -1,1 +1,40 @@
-{     "devDependencies": {         "generator-ng-poly": "*",         "electron-lite": "kaizhu256/node-electron-lite#alpha",         "utility2": "kaizhu256/node-utility2#alpha"     },     "name":"npmtest-generator-ng-poly",     "homepage": "https://github.com/npmtest/node-npmtest-generator-ng-poly",     "repository": {         "type": "git",         "url": "https://github.com/npmtest/node-npmtest-generator-ng-poly.git"     },     "scripts": {         "build-ci": "utility2 shReadmeTest build_ci.sh"     },     "version": "0.0.1" }
+{
+    "author": "kai zhu <kaizhu256@gmail.com>",
+    "description": "test coverage for [generator-ng-poly (v0.13.0)](https://github.com/dustinspecker/generator-ng-poly#readme) [![npm package](https://img.shields.io/npm/v/npmtest-generator-ng-poly.svg?style=flat-square)](https://www.npmjs.org/package/npmtest-generator-ng-poly) [![travis-ci.org build-status](https://api.travis-ci.org/npmtest/node-npmtest-generator-ng-poly.svg)](https://travis-ci.org/npmtest/node-npmtest-generator-ng-poly)",
+    "devDependencies": {
+        "electron-lite": "kaizhu256/node-electron-lite#alpha",
+        "generator-ng-poly": "*",
+        "utility2": "kaizhu256/node-utility2#alpha"
+    },
+    "engines": {
+        "node": ">=4.0"
+    },
+    "homepage": "https://github.com/npmtest/node-npmtest-generator-ng-poly",
+    "keywords": [
+        "coverage",
+        "test",
+        "generator-ng-poly"
+    ],
+    "license": "MIT",
+    "main": "lib.npmtest_generator_ng_poly.js",
+    "name": "npmtest-generator-ng-poly",
+    "nameAlias": "npmtest_generator_ng_poly",
+    "nameOriginal": "npmtest-generator-ng-poly",
+    "os": [
+        "darwin",
+        "linux"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/npmtest/node-npmtest-generator-ng-poly.git"
+    },
+    "scripts": {
+        "build-ci": "utility2 shReadmeTest build_ci.sh",
+        "env": "env",
+        "heroku-postbuild": "npm install \"kaizhu256/node-utility2#alpha\" && utility2 shDeployHeroku",
+        "postinstall": "[ ! -f npm_scripts.sh ] || ./npm_scripts.sh postinstall",
+        "start": "PORT=${PORT:-8080} utility2 start test.js",
+        "test": "(set -e; export PORT=$(utility2 shServerPortRandom); utility2 test test.js)"
+    },
+    "version": "0.0.1"
+}
